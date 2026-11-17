@@ -1,0 +1,40 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body { @apply bg-white font-sans text-ink antialiased; }
+}
+
+@layer components {
+  .h1 { @apply text-2xl font-bold tracking-tight; }
+  .lbl { @apply block text-[13px] font-semibold; }
+  .inp { @apply mt-1.5 block min-h-[40px] w-full rounded-md border border-[#AEB6C4] bg-white px-3 text-sm text-ink outline-none focus:border-brand focus:ring-2 focus:ring-[#7FA6E0]; }
+
+  .btn { @apply inline-flex min-h-[40px] items-center justify-center gap-2 rounded-md px-4 text-sm font-bold disabled:cursor-not-allowed disabled:opacity-50; }
+  .btn-sm { @apply min-h-[34px] px-3 text-[13px]; }
+  .btn-light { @apply btn bg-white text-brand hover:bg-slate-100; }
+  .btn-dark { @apply btn bg-brand text-white hover:bg-[#12315c]; }
+  .btn-outline { @apply btn border border-[#AEB6C4] bg-white text-brand hover:bg-slate-50; }
+  .link-btn { @apply text-sm font-semibold text-brand hover:underline; }
+
+  .card { @apply rounded-xl border border-brand-line bg-white; box-shadow: 0 1px 3px rgba(11, 31, 58, 0.12), 0 4px 14px rgba(11, 31, 58, 0.07); }
+  .table-wrap { @apply card overflow-x-auto; }
+  .tbl { @apply w-full min-w-[640px] border-collapse text-left text-sm; }
+  .tbl th { @apply border-b border-brand-line bg-slate-50 px-4 py-3 text-xs font-semibold uppercase tracking-wide text-brand-muted; }
+  .tbl td { @apply border-b border-slate-100 px-4 py-3 align-middle; }
+  .tbl tbody tr:last-child td { @apply border-b-0; }
+  .tbl tbody tr:hover td { @apply bg-slate-50/70; }
+  .tbl tfoot td { @apply border-t border-brand-line border-b-0; }
+
+  .chip { @apply inline-flex min-h-9 items-center gap-1.5 rounded-full border border-[#C5CCD8] bg-white px-4 text-[13px] hover:bg-slate-50; }
+  .chip-on { @apply border-ink bg-ink text-white hover:bg-ink; }
+
+  .err { @apply mt-1 text-xs text-red-300; }
+  .err-d { @apply mt-1 text-xs text-red-700; }
+}
+
+@media print {
+  body { background: #fff; }
+  .card { box-shadow: none; }
+}
